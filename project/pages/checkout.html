@@ -1,0 +1,291 @@
+<!--
+    PMS-Tools - 结账单编辑器
+    作者：张贝达
+    网站：https://beida.xyz
+    邮箱：admin@beida.xyz
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>结账单制作 - PMS工具箱</title>
+
+  <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="../static/bootstrap-3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../static/main.css">
+
+</head>
+
+<body class="page checkout">
+  <div class="bg"></div>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand">PMS工具箱</span>
+      </div>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">工具 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li class="active"><a href="./checkout.html">结账单制作</a></li>
+              <li><a href="./pricecalc.html">房价计算器</a></li>
+              <li><a href="./handoversheet.html">POS差异单</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="./options.html">设置</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" id="TopAlert"></div>
+      <div class="col-md-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><span class="glyphicon glyphicon-edit"></span> 结账单编辑器</h3>
+          </div>
+          <div class="panel-body print-edit">
+            <div class="row">
+              <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <div class="form-group has-feedback">
+                  <label for="CustomerName"><b class="text-danger">*</b> 客人姓名：</label>
+                  <input type="text" class="form-control" id="CustomerName" placeholder="请输入客人姓名...">
+                  <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                  <label for="StaffAD"><b class="text-danger">*</b> 收款人AD：</label>
+                  <input type="text" class="form-control" id="StaffAD" placeholder="请输入收款人AD...">
+                  <span class="glyphicon glyphicon-font form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                  <label for="PrintDate"><b class="text-danger">*</b> 打印时间：</label>
+                  <input type="text" class="form-control Date-item" id="PrintDate" placeholder="请选择打印时间..." readonly>
+                  <span class="glyphicon glyphicon-time form-control-feedback" aria-hidden="true"></span>
+                </div>
+                <div class="form-group has-feedback">
+                  <label for="CustomNum">自定义单号：</label>
+                  <input type="text" class="form-control" id="CustomNum" placeholder="例：B777777788888888001"
+                    maxlength="8">
+                  <span class="glyphicon glyphicon-bold form-control-feedback" aria-hidden="true"></span>
+                </div>
+              </div>
+              <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
+                <div class="tab">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#Consumption" aria-controls="Consumption" role="tab"
+                        data-toggle="tab">消费账项</a></li>
+                    <li role="presentation"><a href="#Payment" aria-controls="Payment" role="tab"
+                        data-toggle="tab">付款账项</a>
+                    </li>
+                  </ul>
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="Consumption">
+                      <div class="table-responsive">
+                        <table id="ConsumptionTable" class="table table-hover table-bordered">
+                          <thead>
+                            <tr>
+                              <th data-field="ConsumptionDate">消费日期</th>
+                              <th data-field="ConsumptionType">消费类型</th>
+                              <th data-field="ConsumptionRoom">房间号码</th>
+                              <th data-field="ConsumptionAmount">消费金额</th>
+                              <th data-field="ConsumptionOperate">操作</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3 col-xs-6">
+                          <div class="form-group has-feedback">
+                            <label for="ConsumptionDate"><b class="text-danger">*</b> 消费日期：</label>
+                            <div class="input-group">
+                              <span class="input-group-btn">
+                                <button class="btn checkDateStop btn-default" type="button"
+                                  id="ConsumptionDateLock"><span class="glyphicon glyphicon-lock"
+                                    aria-hidden="true"></span></button>
+                              </span>
+                              <input type="text" class="form-control Date-item" id="ConsumptionDate"
+                                placeholder="请选择消费日期..." readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-xs-6">
+                          <div class="form-group">
+                            <label for="ConsumptionType"><b class="text-danger">*</b> 消费类型：</label>
+                            <select class="form-control" id="ConsumptionType">
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-xs-6">
+                          <div class="form-group has-feedback">
+                            <label for="ConsumptionRoom"><b class="text-danger">*</b> 房间号码：</label>
+                            <input type="text" class="form-control" id="ConsumptionRoom" placeholder="请输入房间号码...">
+                            <span class="glyphicon glyphicon-home form-control-feedback" aria-hidden="true"></span>
+                          </div>
+                        </div>
+                        <div class="col-lg-2 col-xs-6">
+                          <div class="form-group has-feedback">
+                            <label for="ConsumptionAmount"><b class="text-danger">*</b> 消费金额：</label>
+                            <input type="text" class="form-control" id="ConsumptionAmount" placeholder="消费金额...">
+                            <span class="glyphicon glyphicon-yen form-control-feedback" aria-hidden="true"></span>
+                          </div>
+                        </div>
+                        <div class="col-lg-1 col-xs-12">
+                          <button type="button" class="btn btn-primary btn-block btn-add" id="ConsumptionOperate"><span
+                              class="glyphicon glyphicon-plus" aria-hidden="true"></span></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="Payment">
+                      <div class="table-responsive">
+                        <table id="PaymentTable" class="table table-hover table-bordered">
+                          <thead>
+                            <tr>
+                              <th data-field="PaymentDate">付款日期</th>
+                              <th data-field="PaymentType">付款方式</th>
+                              <th data-field="PaymentAmount">付款金额</th>
+                              <th data-field="PaymentOperate">操作</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="row">
+                        <div class="col-lg-3 col-xs-6">
+                          <div class="form-group has-feedback">
+                            <label for="PaymentDate"><b class="text-danger">*</b> 付款日期：</label>
+                            <div class="input-group">
+                              <span class="input-group-btn">
+                                <button class="btn checkDateStop btn-default" type="button" id="PaymentDateLock"><span
+                                    class="glyphicon glyphicon-lock" aria-hidden="true"></span></button>
+                              </span>
+                              <input type="text" class="form-control Date-item" id="PaymentDate"
+                                placeholder="请选择付款日期..." readonly>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-xs-6">
+                          <div class="form-group">
+                            <label for="PaymentType"><b class="text-danger">*</b> 付款方式：</label>
+                            <select class="form-control" id="PaymentType">
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-lg-4 col-xs-12">
+                          <div class="form-group has-feedback">
+                            <label for="PaymentAmount"><b class="text-danger">*</b> 付款金额：</label>
+                            <input type="text" class="form-control" id="PaymentAmount" placeholder="请输入付款金额...">
+                            <span class="glyphicon glyphicon-yen form-control-feedback" aria-hidden="true"></span>
+                          </div>
+                        </div>
+                        <div class="col-lg-1 col-xs-12">
+                          <button type="button" class="btn btn-primary btn-block btn-add" id="PaymentOperate">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="btn-group pull-right" role="group" aria-label="Default button group">
+                  <button type="button" class="btn btn-danger" id="ClearPrintFrom"><i class="fa fa-trash"
+                      aria-hidden="true"></i> 清空</button>
+                  <button class="btn btn-primary" id="PrintPreview"><i class="fa fa-eye" aria-hidden="true"></i>
+                    预览</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="DefaultModal" tabindex="-1" role="dialog" aria-labelledby="DefaultModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="DefaultModalLabel"></h4>
+            </div>
+            <div class="modal-body" id="DefaultModalText"></div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal fade" id="PreviewModal" tabindex="-1" role="dialog" aria-labelledby="PreviewModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close Print-close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="PreviewModalLabel">打印预览</h4>
+            </div>
+            <div class="modal-body" id="PreviewModalText">
+              <div class="row">
+                <div class="col-md-8" id="previewCheckout">
+
+                </div>
+                <div class="col-md-4">
+                  <div class="form-group">
+                    <label for="CheckoutType">结账单样式选择</label>
+                    <div>
+                      <label class="radio-inline">
+                        <input type="radio" name="Checkoutradio" id="CheckoutA" value="a"> 旧版（不建议使用）
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="Checkoutradio" id="CheckoutB" value="b" checked> 新版
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default Print-close" data-dismiss="modal">关闭</button>
+              <button type="button" class="btn btn-primary" id="PrintThis">打印</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script src="../static/jquery-3.6.0/jquery.min.js"></script>
+      <script src="../static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+      <script src="../static/layDate-v5.3.1/laydate.js"></script>
+      <script src="../static/jquery.tabletojson/jquery.tabletojson.min.js"></script>
+      <script src="../static/Tippy/popper.min.js"></script>
+      <script src="../static/Tippy/tippy-bundle.umd.js"></script>
+      <script src="../static/main.js"></script>
+      <script src="../static/checkout.js"></script>
+</body>
+
+</html>

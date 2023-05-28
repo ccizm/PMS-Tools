@@ -1,0 +1,200 @@
+<!--
+    PMS-Tools - 房价计算器
+    作者：张贝达
+    网站：https://beida.xyz
+    邮箱：admin@beida.xyz
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房价计算器 - PMS工具箱</title>
+
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../static/bootstrap-3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/main.css">
+
+</head>
+
+<body class="page pricecalc">
+    <div class="bg"></div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand">PMS工具箱</span>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">工具 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./checkout.html">结账单制作</a></li>
+                            <li class="active"><a href="./pricecalc.html">房价计算器</a></li>
+                            <li><a href="./handoversheet.html">POS差异单</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./options.html">设置</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 col-sm-12">
+                <div class="panel panel-default ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-edit"></span> 房价计算器</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="VipType"><b class="text-danger">*</b> 选择会员：</label>
+                                    <select class="form-control" id="VipType">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="todayDate"><b class="text-danger">*</b> 当天日期：</label>
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                              <button class="btn checkDateStop btn-default" type="button"
+                                                id="todayDateLock"><span class="glyphicon glyphicon-lock"
+                                                  aria-hidden="true"></span></button>
+                                            </span>
+                                            <input type="text" class="form-control" id="todayDate"
+                                        placeholder="请选择当天日期..." readonly>
+                                          </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="RoomPrice"><b class="text-danger">*</b> 房型门市价：</label>
+                                    <input type="text" class="form-control" id="RoomPrice"
+                                        placeholder="请填写价格...">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="additionalDiscount">折上折：</label>
+                                    <input type="text" class="form-control" id="additionalDiscount"
+                                        placeholder="例：88...">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="couponAmount">优惠券立减：</label>
+                                    <input type="text" class="form-control" id="couponAmount" placeholder="...">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="additionalFees">附加费用：</label>
+                                    <input type="text" class="form-control" id="additionalFees" placeholder="其他费用">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <button type="button" class="btn btn-primary btn-block pt-m-b-2" id="addCalcOptions"><span
+                                        class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加</button>
+                            </div>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="priceTable" class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th data-field="VipType">会员</th>
+                                        <th data-field="todayDate">当天日期</th>
+                                        <th data-field="RoomPrice">房型门市价</th>
+                                        <th data-field="additionalDiscount">折上折</th>
+                                        <th data-field="couponAmount">立减金额</th>
+                                        <th data-field="additionalFees">附加金额</th>
+                                        <th data-field="delOption">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="btn-group pt-float-right" role="group" aria-label="Default button group">
+                                    <button type="button" class="btn btn-danger" id="ClearCalcFrom"><i class="fa fa-trash"
+                                            aria-hidden="true"></i>
+                                        清空</button>
+                                    <button class="btn btn-primary" id="priceCalcSubmit"><i class="fa fa-eye" aria-hidden="true"></i>
+                                        预览</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-check"></span> 结果</h3></div>
+                    <div class="panel-body">
+                        <table class="table" id="resultTable">
+                            <thead>
+                                <tr>
+                                    <th>日期</th>
+                                    <th>费用</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <h4>总金额：<b id="totalMoney1">/</b></h4>
+                        <h4>优惠后：<b id="totalMoney2">/</b></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="DefaultModal" tabindex="-1" role="dialog" aria-labelledby="DefaultModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="DefaultModalLabel"></h4>
+                </div>
+                <div class="modal-body" id="DefaultModalText"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/jquery-3.6.0/jquery.min.js"></script>
+    <script src="../static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../static/layDate-v5.3.1/laydate.js"></script>
+    <script src="../static/jquery.tabletojson/jquery.tabletojson.min.js"></script>
+    <script src="../static/Tippy/popper.min.js"></script>
+    <script src="../static/Tippy/tippy-bundle.umd.js"></script>
+    <script src="../static/main.js"></script>
+    <script src="../static/pricecalc.js"></script>
+</body>
+
+</html>

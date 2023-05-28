@@ -1,0 +1,152 @@
+<!--
+    PMS-Tools - POS机差异单
+    作者：张贝达
+    网站：https://beida.xyz
+    邮箱：admin@beida.xyz
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS机差异单 - PMS工具箱</title>
+
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../static/bootstrap-3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/main.css">
+
+</head>
+
+<body class="page pricecalc">
+    <div class="bg"></div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand">PMS工具箱</span>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">工具 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./checkout.html">结账单制作</a></li>
+                            <li><a href="./pricecalc.html">房价计算器</a></li>
+                            <li class="active"><a href="./handoversheet.html">POS差异单</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./options.html">设置</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8 col-sm-12">
+                <div class="panel panel-default ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-edit"></span> POS机交接金额及差异单</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="todayDate">当天日期：</label>
+                                    <input type="text" class="form-control" id="todayDate" placeholder="请选择当天日期..."
+                                        readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="PMSUM">全天PMS刷卡金额：</label>
+                                    <input type="text" class="form-control" id="PMSUM" placeholder="请填写金额...">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="POSUM">全天POS机刷卡金额：</label>
+                                    <input type="text" class="form-control" id="POSUM" placeholder="请填写金额...">
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="Difference">差异：</label>
+                                    <input type="text" class="form-control" id="Difference" placeholder="请填写差异...">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="DifferenceDESC">差异说明：</label>
+                                    <textarea class="form-control" id="DifferenceDESC" rows="3" placeholder="请填写差异说明，尽可能详细..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="btn-group pt-float-right" role="group" aria-label="Default button group">
+                                    <button type="button" class="btn btn-danger" id="ClearHandoverSheetFrom"><i
+                                            class="fa fa-trash" aria-hidden="true"></i>
+                                        清空</button>
+                                    <button class="btn btn-primary" id="HandoverSheetSubmit"><i class="fa fa-eye"
+                                            aria-hidden="true"></i>
+                                        预览</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="PreviewModal" tabindex="-1" role="dialog" aria-labelledby="PreviewModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close Print-close" data-dismiss="modal" aria-label="Close"><span
+                  aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="PreviewModalLabel">打印预览</h4>
+            </div>
+            <div class="modal-body" id="PreviewModalText">
+              <div class="row">
+                <div class="col-md-8" id="previewCheckout">
+
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default Print-close" data-dismiss="modal">关闭</button>
+              <button type="button" class="btn btn-primary" id="PrintThis">打印</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="../static/jquery-3.6.0/jquery.min.js"></script>
+    <script src="../static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../static/layDate-v5.3.1/laydate.js"></script>
+    <script src="../static/jquery.tabletojson/jquery.tabletojson.min.js"></script>
+    <script src="../static/Tippy/popper.min.js"></script>
+    <script src="../static/Tippy/tippy-bundle.umd.js"></script>
+    <script src="../static/main.js"></script>
+    <script src="../static/handoversheet.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,407 @@
+<!--
+    PMS-Tools - 设置页面
+    作者：张贝达
+    网站：https://beida.xyz
+    邮箱：admin@beida.xyz
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设置 - PMS工具箱</title>
+
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../static/bootstrap-3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/main.css">
+
+</head>
+
+<body class="page options">
+    <div class="bg"></div>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand">PMS工具箱</span>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">工具 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./checkout.html">结账单制作</a></li>
+                            <li><a href="./pricecalc.html">房价计算器</a></li>
+                            <li><a href="./handoversheet.html">POS差异单</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="./options.html">设置</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-6 col-xs-12">
+                <div>
+                    <div class="panel panel-default main-card">
+                        <div class="panel-heading">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#InfoDefault"
+                                        aria-controls="InfoDefault" role="tab" data-toggle="tab">基础信息</a></li>
+                                <li role="presentation"><a href="#InfoConsumption" aria-controls="InfoConsumption"
+                                        role="tab" data-toggle="tab">消费类型</a></li>
+                                <li role="presentation"><a href="#InfoPayment" aria-controls="InfoPayment" role="tab"
+                                        data-toggle="tab">付款方式</a></li>
+                                <li role="presentation"><a href="#InfoVip" aria-controls="InfoVip" role="tab"
+                                        data-toggle="tab">会员计划</a></li>
+                                <!--<li role="presentation"><a href="#InfoUrl" aria-controls="InfoUrl" role="tab"
+                                        data-toggle="tab">网址导航</a></li>-->
+                            </ul>
+                        </div>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="InfoDefault">
+                                <div class="panel-body">
+                                    <form id="HotelInfo">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="SetHotelName"><b class="text-danger">*</b> 酒店名称：</label>
+                                                    <input type="text" class="form-control" id="SetHotelName"
+                                                        placeholder="请输入完整酒店名称...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="SetHotelAddress"><b class="text-danger">*</b> 酒店地址：</label>
+                                                    <input type="text" class="form-control" id="SetHotelAddress"
+                                                        placeholder="请输入酒店详细地址...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-group">
+                                                    <label for="SetStaffAD"><b class="text-danger">*</b> 收款人AD：</label>
+                                                    <input type="text" class="form-control" id="SetStaffAD"
+                                                        placeholder="请输入收款人AD账号...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="SetHotelPhone"><b class="text-danger">*</b> 酒店电话：</label>
+                                                    <input type="text" class="form-control" id="SetHotelPhone"
+                                                        placeholder="请输入酒店电话...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="SetHotelNum"><b class="text-danger">*</b> 酒店编号：</label>
+                                                    <input type="text" class="form-control" id="SetHotelNum"
+                                                        placeholder="请输入酒店编号...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="SetHotelZip"><b class="text-danger">*</b> 酒店邮编：</label>
+                                                    <input type="text" class="form-control" id="SetHotelZip"
+                                                        placeholder="请输入酒店所属邮编号码...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="SetHotelFax"><b class="text-danger">*</b> 酒店传真：</label>
+                                                    <input type="text" class="form-control" id="SetHotelFax"
+                                                        placeholder="请输入酒店传真号码...">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <button type="button" class="btn btn-primary btn-block"
+                                                    id="SaveHotelInfo">保存</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="InfoConsumption">
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered" id="ConsumptionTable">
+                                            <thead>
+                                                <th>消费类型</th>
+                                                <th>操作</th>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label for="SetConsumptionType"><b class="text-danger">*</b> 消费类型：</label>
+                                                <input type="text" class="form-control" id="SetConsumptionType"
+                                                    placeholder="请输入消费类型...">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="submit" class="btn btn-primary btn-block btn-add"
+                                                id="AddConsumptionType"><span class="glyphicon glyphicon-plus"
+                                                    aria-hidden="true"></span> <span
+                                                    class="hidden-md">添加</span></button>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary btn-block"
+                                                id="SaveConsumptionType">保存</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="InfoPayment">
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered" id="PaymentTable">
+                                            <thead>
+                                                <th>付款方式</th>
+                                                <th>操作</th>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label for="SetPaymentType"><b class="text-danger">*</b> 付款方式：</label>
+                                                <input type="text" class="form-control" id="SetPaymentType"
+                                                    placeholder="请输入付款方式...">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="submit" class="btn btn-primary btn-block btn-add"
+                                                id="AddPaymentType"><span class="glyphicon glyphicon-plus"
+                                                    aria-hidden="true"></span> <span
+                                                    class="hidden-md">添加</span></button>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary btn-block"
+                                                id="SavePaymentType">保存</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="InfoVip">
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered" id="VipTable">
+                                            <thead>
+                                                <th>等级</th>
+                                                <th>折扣</th>
+                                                <th>操作</th>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="AddVipLevel"><b class="text-danger">*</b> 等级：</label>
+                                                <input type="text" class="form-control" id="AddVipLevel"
+                                                    placeholder="请输入等级名称...">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="AddVipDiscount"><b class="text-danger">*</b> 折扣：</label>
+                                                <input type="text" class="form-control" id="AddVipDiscount"
+                                                    placeholder="请输入折扣...">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <button type="submit" class="btn btn-primary btn-block btn-add"
+                                                id="AddVip"><span class="glyphicon glyphicon-plus"
+                                                    aria-hidden="true"></span> <span
+                                                    class="hidden-md">添加</span></button>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary btn-block" id="SaveVip">保存</button>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="InfoUrl">
+                                <div class="panel-body">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered" id="LinksTable">
+                                            <thead>
+                                                <th>名称</th>
+                                                <th>网址</th>
+                                                <th>操作</th>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label for="AddLinkName"><b class="text-danger">*</b> 名称：</label>
+                                                <input type="text" class="form-control" id="AddLinkName"
+                                                    placeholder="请输入站点名称...">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="form-group">
+                                                <label for="AddLinkUrl"><b class="text-danger">*</b> 网址：</label>
+                                                <input type="text" class="form-control" id="AddLinkUrl"
+                                                    placeholder="请输入站点网址...">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button type="submit" class="btn btn-primary btn-block btn-add"
+                                                id="AddLink"><span class="glyphicon glyphicon-plus"
+                                                    aria-hidden="true"></span> <span
+                                                    class="hidden-md">添加</span></button>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary btn-block"
+                                                id="SaveLinks">保存</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                    <span class="glyphicon glyphicon-question-sign"></span> 关于插件
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                            aria-labelledby="headingOne">
+                            <div class="panel-body" id="AboutExtensions">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    <span class="glyphicon glyphicon-wrench"></span> 重置插件
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="alert alert-warning" role="alert">会还原默认设置，慎点！</div>
+                                <button type="button" class="btn btn-danger btn-block" id="ResetDefault">恢复默认设置</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    <span class="glyphicon glyphicon-print"></span> 测试设备
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingThree">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered" id="PrinterTable">
+                                    <thead>
+                                        <th>品牌</th>
+                                        <th>型号</th>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                    href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <span class="glyphicon glyphicon-heart text-danger"></span> 开源项目
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                            aria-labelledby="headingFour">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered" id="OpenSourceProject">
+                                    <thead>
+                                        <th>项目名称</th>
+                                        <th>版本</th>
+                                        <th>许可</th>
+                                        <th>官网</th>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="DefaultModal" tabindex="-1" role="dialog" aria-labelledby="DefaultModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="DefaultModalLabel"></h4>
+                </div>
+                <div class="modal-body" id="DefaultModalText"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/jquery-3.6.0/jquery.min.js"></script>
+    <script src="../static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../static/layDate-v5.3.1/laydate.js"></script>
+    <script src="../static/jquery.tabletojson/jquery.tabletojson.min.js"></script>
+    <script src="../static/Tippy/popper.min.js"></script>
+    <script src="../static/Tippy/tippy-bundle.umd.js"></script>
+    <script src="../static/main.js"></script>
+    <script src="../static/option.js"></script>
+</body>
+
+</html>
