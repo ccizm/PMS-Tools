@@ -1,8 +1,8 @@
 {
     "name": "__MSG_extName__",
     "author": "张贝达",
-    "version": "0.3.1",
-    "default_locale" : "zh_CN",
+    "version": "0.3.3",
+    "default_locale": "zh_CN",
     "manifest_version": 3,
     "description": "PMS工具集合，各式各样的工具",
     "permissions": [
@@ -17,5 +17,33 @@
         "default_icon": "project/static/images/logo.png",
         "default_title": "__MSG_extName__",
         "default_popup": "project/pages/popup.html"
-    }
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "project/static/jquery-3.6.0/jquery.min.js",
+                "project/static/activate-power-mode/activate-power-mode.js",
+                "project/static/webscript.js"
+            ],
+            "css": [
+                "project/static/webcss.css"
+            ],
+            "matches": [
+                "*://*/*",
+                "*://*/*"
+            ],
+            "all_frames": true
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "project/static/*",
+                "project/pages/*"
+            ],
+            "matches": [
+                "*://*/*"
+            ]
+        }
+    ]
 }

@@ -521,7 +521,7 @@
 }
 
 .panel-body .tab .table-responsive {
-  max-height: 450px;
+  max-height: 400px;
 }
 
 .btn-add {
@@ -563,10 +563,6 @@
   padding: 10px;
   height: 40px;
   font-size: 16px;
-}
-
-.popup .navbar-brand:hover {
-  color: #2196f3;
 }
 
 .popup .navbar-brand img {
@@ -677,4 +673,19 @@
 .btn:active.focus,
 .btn.active.focus {
   outline: none;
+}
+
+
+/* 去掉 select 元素的默认箭头 */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* IE11 */
+  -ms-appearance: none;
+}
+
+/* 去掉 IE11 的默认箭头 */
+select::-ms-expand {
+  display: none;
 }

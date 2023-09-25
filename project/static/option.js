@@ -296,7 +296,6 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
 });
 
-//chrome.storage.sync.clear()
 
 AboutExtensions.innerHTML = '<p>名称：' + chrome.runtime.getManifest().name +
     '</p><p>版本：' + chrome.runtime.getManifest().version +

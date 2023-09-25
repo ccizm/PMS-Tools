@@ -245,3 +245,7 @@ function destroyIframe(iframe) {
     //把iframe从页面移除
     iframe.parentNode.removeChild(iframe);
 }
+
+POWERMODE.colorful = true; // make power mode colorful
+POWERMODE.shake = false; // turn off shake
+document.body.addEventListener('input', POWERMODE); // catch input event to enable keyboard control for the body element.
