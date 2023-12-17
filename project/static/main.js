@@ -1,6 +1,6 @@
 const options = {
     "Hotel": [{
-        "HotelName": "橙子上海徐家汇虚拟酒店店",
+        "HotelName": "橙子上海徐家汇虚拟酒店",
         "HotelAddress": "上海市徐汇区橙子江路",
         "HotelPhone": "021-12345678",
         "HotelNumber": "2152003",
