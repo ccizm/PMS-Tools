@@ -22,16 +22,16 @@
 </head>
 
 <body class="page pricecalc">
-          <svg id="gradient-rotate" preserveAspectRatio="none" viewBox="0 0 500 500">
+    <svg id="gradient-rotate" preserveAspectRatio="none" viewBox="0 0 500 500">
         <defs>
-          <linearGradient x1="0%" y1="0%" y2="100%" id="a">
-            <stop id="color-stop-1" stop-color="#22C8F6" offset="0%"></stop>
-            <stop id="color-stop-2" stop-color="#20C498" offset="65%"></stop>
-            <stop id="color-stop-3" stop-color="#189932" offset="100%"></stop>
-          </linearGradient>
+            <linearGradient x1="0%" y1="0%" y2="100%" id="a">
+                <stop id="color-stop-1" stop-color="#9575CD" offset="0%"></stop>
+                <stop id="color-stop-2" stop-color="#4DD0E1" offset="65%"></stop>
+                <stop id="color-stop-3" stop-color="#DCE775" offset="100%"></stop>
+            </linearGradient>
         </defs>
         <path fill="url(#a)" d="M0 0h500v500H0z"></path>
-      </svg>
+    </svg>
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
@@ -83,22 +83,21 @@
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <label for="todayDate"><b class="text-danger">*</b> 当天日期：</label>
-                                        <div class="input-group">
-                                            <span class="input-group-btn">
-                                              <button class="btn checkDateStop btn-default" type="button"
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <button class="btn checkDateStop btn-default" type="button"
                                                 id="todayDateLock"><span class="glyphicon glyphicon-lock"
-                                                  aria-hidden="true"></span></button>
-                                            </span>
-                                            <input type="text" class="form-control" id="todayDate"
-                                        placeholder="请选择当天日期..." readonly>
-                                          </div>
+                                                    aria-hidden="true"></span></button>
+                                        </span>
+                                        <input type="text" class="form-control" id="todayDate" placeholder="请选择当天日期..."
+                                            readonly>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <label for="RoomPrice"><b class="text-danger">*</b> 房型门市价：</label>
-                                    <input type="text" class="form-control" id="RoomPrice"
-                                        placeholder="请填写价格...">
+                                    <input type="text" class="form-control" id="RoomPrice" placeholder="请填写价格...">
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
@@ -121,8 +120,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-12">
-                                <button type="button" class="btn btn-primary btn-block pt-m-b-2" id="addCalcOptions"><span
-                                        class="glyphicon glyphicon-plus" aria-hidden="true"></span> 添加</button>
+                                <button type="button" class="btn btn-primary btn-block pt-m-b-2"
+                                    id="addCalcOptions"><span class="glyphicon glyphicon-plus"
+                                        aria-hidden="true"></span> 添加</button>
                             </div>
                         </div>
                         <div class="table-responsive">
@@ -147,10 +147,11 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="btn-group pt-float-right" role="group" aria-label="Default button group">
-                                    <button type="button" class="btn btn-danger" id="ClearCalcFrom"><i class="fa fa-trash"
-                                            aria-hidden="true"></i>
+                                    <button type="button" class="btn btn-danger" id="ClearCalcFrom"><i
+                                            class="fa fa-trash" aria-hidden="true"></i>
                                         清空</button>
-                                    <button class="btn btn-primary" id="priceCalcSubmit"><i class="fa fa-eye" aria-hidden="true"></i>
+                                    <button class="btn btn-primary" id="priceCalcSubmit"><i class="fa fa-eye"
+                                            aria-hidden="true"></i>
                                         预览</button>
                                 </div>
                             </div>
@@ -161,7 +162,9 @@
             </div>
             <div class="col-lg-3 col-md-4 col-sm-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-check"></span> 结果</h3></div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-check"></span> 结果</h3>
+                    </div>
                     <div class="panel-body">
                         <table class="table" id="resultTable">
                             <thead>

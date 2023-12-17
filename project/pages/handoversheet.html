@@ -22,16 +22,16 @@
 </head>
 
 <body class="page pricecalc">
-          <svg id="gradient-rotate" preserveAspectRatio="none" viewBox="0 0 500 500">
+    <svg id="gradient-rotate" preserveAspectRatio="none" viewBox="0 0 500 500">
         <defs>
-          <linearGradient x1="0%" y1="0%" y2="100%" id="a">
-            <stop id="color-stop-1" stop-color="#22C8F6" offset="0%"></stop>
-            <stop id="color-stop-2" stop-color="#20C498" offset="65%"></stop>
-            <stop id="color-stop-3" stop-color="#189932" offset="100%"></stop>
-          </linearGradient>
+            <linearGradient x1="0%" y1="0%" y2="100%" id="a">
+                <stop id="color-stop-1" stop-color="#9575CD" offset="0%"></stop>
+                <stop id="color-stop-2" stop-color="#4DD0E1" offset="65%"></stop>
+                <stop id="color-stop-3" stop-color="#DCE775" offset="100%"></stop>
+            </linearGradient>
         </defs>
         <path fill="url(#a)" d="M0 0h500v500H0z"></path>
-      </svg>
+    </svg>
     <nav class="navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
@@ -101,7 +101,8 @@
                             <div class="col-sm-12">
                                 <div class="form-group">
                                     <label for="DifferenceDESC">差异说明：</label>
-                                    <textarea class="form-control" id="DifferenceDESC" rows="3" placeholder="请填写差异说明，尽可能详细..."></textarea>
+                                    <textarea class="form-control" id="DifferenceDESC" rows="3"
+                                        placeholder="请填写差异说明，尽可能详细..."></textarea>
                                 </div>
                             </div>
                         </div>
@@ -128,26 +129,26 @@
 
     <div class="modal fade" id="PreviewModal" tabindex="-1" role="dialog" aria-labelledby="PreviewModalLabel">
         <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close Print-close" data-dismiss="modal" aria-label="Close"><span
-                  aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="PreviewModalLabel">打印预览</h4>
-            </div>
-            <div class="modal-body" id="PreviewModalText">
-              <div class="row">
-                <div class="col-md-8" id="previewCheckout">
-
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close Print-close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="PreviewModalLabel">打印预览</h4>
                 </div>
-              </div>
+                <div class="modal-body" id="PreviewModalText">
+                    <div class="row">
+                        <div class="col-md-8" id="previewCheckout">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default Print-close" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="PrintThis">打印</button>
+                </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default Print-close" data-dismiss="modal">关闭</button>
-              <button type="button" class="btn btn-primary" id="PrintThis">打印</button>
-            </div>
-          </div>
         </div>
-      </div>
+    </div>
     <script src="../static/jquery-3.6.0/jquery.min.js"></script>
     <script src="../static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
     <script src="../static/layDate-v5.3.1/laydate.js"></script>
