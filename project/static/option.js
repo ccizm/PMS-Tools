@@ -300,4 +300,4 @@ $(document).ready(function () {
 AboutExtensions.innerHTML = '<p>名称：' + chrome.runtime.getManifest().name +
     '</p><p>版本：' + chrome.runtime.getManifest().version +
     '</p><p>作者：' + chrome.runtime.getManifest().author +
-    '</p><p>邮箱：<a href="mailto:pmstool@beida.xyz" target="_blank">pmstool@beida.xyz</a></p><p>网址：<a href="https://pmstool.beida.xyz" target="_blank">https://pmstool.beida.xyz</a></p>';
+    '</p><p>网址：<a href="https://pmstool.beida.xyz" target="_blank">https://pmstool.beida.xyz</a></p>';

@@ -1,3 +1,7 @@
+.PMSTool {
+    height: 0!important;
+}
+
 .PMSTool_Box {
     display: flex;
     flex-direction: column;
@@ -54,6 +58,8 @@
     z-index: 999999999;
     bottom: 100px;
     right: 0;
+    max-height: 50px;
+    text-align: center;
     border: none;
     border: 1px solid #2e6da4;
     padding: 4px;

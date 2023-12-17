@@ -689,3 +689,81 @@ select {
 select::-ms-expand {
   display: none;
 }
+
+#gradient-rotate {
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+#color-stop-1 {
+  -webkit-animation: change-color-1 12s ease-in-out infinite alternate;
+  animation: change-color-1 12s ease-in-out infinite alternate
+}
+
+#color-stop-2 {
+  -webkit-animation: change-color-2 12s ease-in-out infinite alternate;
+  animation: change-color-2 12s ease-in-out infinite alternate
+}
+
+#color-stop-3 {
+  -webkit-animation: change-color-3 12s ease-in-out infinite alternate;
+  animation: change-color-3 12s ease-in-out infinite alternate
+}
+
+@keyframes change-color-1 {
+  0% {
+    stop-color: #E57373
+  }
+
+  25% {
+    stop-color: #F06292
+  }
+
+  50% {
+    stop-color: #BA68C8
+  }
+
+  75% {
+    stop-color: #9575CD
+  }
+}
+
+@keyframes change-color-2 {
+  0% {
+    stop-color: #7986CB
+  }
+
+  25% {
+    stop-color: #64B5F6
+  }
+
+  350% {
+    stop-color: #4FC3F7
+  }
+
+  75% {
+    stop-color: #4DD0E1
+  }
+}
+
+@keyframes change-color-3 {
+  0% {
+    stop-color: #4DB6AC
+  }
+
+  25% {
+    stop-color: #81C784
+  }
+
+  50% {
+    stop-color: #AED581
+  }
+
+  75% {
+    stop-color: #DCE775
+  }
+}
