@@ -186,11 +186,11 @@ const getStyle = (el, attr) => {
 };
 
 tippy('.navbar-brand', {
-    content: '来，赏小闫同学一个馍馍！',
+    content: '好好学习，天天向上！',
 });
 
 tippy('#CustomNum', {
-    content: '一般不填这玩意，除非特殊~',
+    content: '自定义填写，8位随机数',
 });
 
 tippy('#ResetDefault', {
@@ -198,7 +198,7 @@ tippy('#ResetDefault', {
 });
 
 tippy('.checkDateStop', {
-    content: '锁住添加行时时间递增 +1',
+    content: '日期递增锁',
 });
 
 
