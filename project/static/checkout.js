@@ -2,7 +2,6 @@ chrome.storage.sync.get('Checkout', (data) => {
     Object.assign(Checkout, data.Checkout);
 });
 
-
 $('#PrintDate').val(nowDate());
 $('#ConsumptionDate').val(nowDate());
 $('#PaymentDate').val(nowDate());
@@ -18,10 +17,6 @@ chrome.storage.sync.get('options', (data) => {
         $('#PaymentType').append(`<option value="${options.Payment[i]}">${options.Payment[i]}</option>`);
     }
 });
-
-
-
-
 
 //消费账项添加行
 $("#ConsumptionOperate").click(function () {
@@ -70,8 +65,6 @@ $('#PaymentOperate').click(function () {
     }
 });
 
-
-
 //预览
 $('#PrintPreview').click(function () {
     if ($('#CustomerName').val() != "" && $('#StaffAD').val() != "" && $('#ConsumptionTable tbody tr').length != 0) {
@@ -104,33 +97,9 @@ $('#PrintPreview').click(function () {
 
 //选择结账单类型
 $('input[type="radio"][name="Checkoutradio"]').on("change", function () {
-    document.getElementById('previewCheckout').innerHTML="";
+    document.getElementById('previewCheckout').innerHTML = "";
     createIframe(document.getElementById('previewCheckout'), './checkout/' + this.value + '.html');
 });
-
-/*
-function createXmlHttp() {
-    if (window.XMLHttpRequest) {
-       xmlHttp = new XMLHttpRequest();
-    } else {
-       xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-}
-function getSource(x) {
-    var url = x;
-
-    document.getElementById("source").value = "正在加载……";   //提示正在加载
-    createXmlHttp();                                            //创建XMLHttpRequest对象
-    xmlHttp.onreadystatechange = writeSource;                   //设置回调函数
-    xmlHttp.open("GET", url, true);
-    xmlHttp.send(null);
-}
-
-*/
-
-
-
-
 
 $('#PrintThis').click(function () {
     document.getElementById('previewCheckout').getElementsByTagName('iframe')[0].contentWindow.print();
@@ -235,7 +204,6 @@ function CheckoutDataSet() {
     });
 }
 
-
 $('#ClearPrintFrom').click(function () {
     $('#CustomerName').val('');
     $('#CustomNum').val('');
@@ -259,8 +227,6 @@ $('#ClearPrintFrom').click(function () {
     }
 })
 
-
-
 $('#ConsumptionDateLock').click(function () {
     if ($('#ConsumptionDateLock').hasClass('btn-danger')) {
         $("#ConsumptionDateLock").removeClass("btn-danger");
@@ -270,7 +236,6 @@ $('#ConsumptionDateLock').click(function () {
         $("#ConsumptionDateLock").removeClass("btn-default");
     }
 })
-
 
 $('#PaymentDateLock').click(function () {
     if ($('#PaymentDateLock').hasClass('btn-danger')) {
