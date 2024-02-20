@@ -69,6 +69,8 @@ $('#PaymentOperate').click(function () {
 $('#PrintPreview').click(function () {
     if ($('#CustomerName').val() != "" && $('#StaffAD').val() != "" && $('#ConsumptionTable tbody tr').length != 0) {
         CheckoutDataSet();
+        document.getElementById('CheckoutA').checked = false;
+        document.getElementById('CheckoutB').checked = true;
         var dateOne = new Date($('#PrintDate').val()); //Year, Month, Date    
         var dateTwo = new Date(Checkout.CheckoutTime); //Year, Month, Date 
         if (dateOne < dateTwo) {

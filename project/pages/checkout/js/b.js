@@ -68,8 +68,3 @@ chrome.storage.sync.get('options', (data) => {
     document.querySelector("#checkout > div > div:nth-child(7) > div > div:nth-child(3) > span").innerHTML = '邮编:' + options.Hotel[0].HotelZip;
     document.querySelector("#checkout > div > div:nth-child(7) > div > div:nth-child(4) > span").innerHTML = '传真:' + options.Hotel[0].HotelFax;
 });
-
-document.onselectstart=function(){return false}
-document.oncontextmenu=function(){return false}
-document.ondragstart=function(){return false}
-document.onselect=function(){return false}

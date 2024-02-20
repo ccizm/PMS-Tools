@@ -48941,7 +48941,7 @@ li[data-v-5d69e186] {
 
 .footer span[data-v-0078adbe] {
     bottom: 5mm;
-    font-size: 6px;
+    font-size: 12px;
     width: 50%;
     color: rgb(16, 16, 16);
 }
@@ -48976,7 +48976,7 @@ li[data-v-5d69e186] {
 
 .footer span[data-v-0dec4ce4] {
     bottom: 5mm;
-    font-size: 6px;
+    font-size: 12px;
     width: 50%;
     color: rgb(16, 16, 16);
 }
@@ -56635,6 +56635,14 @@ li[data-v-5d69e186] {
 }
 
 @media print {
+    #checkout {
+        padding: 0!important;
+    }
+
+    .Legal {
+        -webkit-box-shadow: none!important;
+        box-shadow: none!important;
+    }
 
     @page {
         margin: 0px;
@@ -56878,10 +56886,16 @@ tr.solid:nth-child(2n) {
     font-weight: 800;
 }
 
+#checkout {
+    padding: 16px;
+}
+
 .Legal[data-v-5085e2e2] {
     width: 72mm;
     padding: 20px 10px 5px;
     margin: auto;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgba(99 99 100 / 60%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(99 99 100 / 60%);
 }
 
 .Legal .bottom-line[data-v-5085e2e2] {
@@ -56905,7 +56919,7 @@ tr.solid:nth-child(2n) {
 }
 
 .Legal .info[data-v-5085e2e2] {
-    font-size: 6px;
+    font-size: 12px;
     color: rgb(16, 16, 16);
 }
 
@@ -56915,7 +56929,7 @@ tr.solid:nth-child(2n) {
 
 .Legal[data-v-5085e2e2] .el-table .cell {
     padding: 0px;
-    font-size: 6px;
+    font-size: 12px;
     color: rgb(0, 0, 0);
     word-break: break-word;
     height: auto;
@@ -56952,7 +56966,7 @@ tr.solid:nth-child(2n) {
 }
 
 .Legal .info[data-v-3d748466] {
-    font-size: 6px;
+    font-size: 12px;
     color: rgb(16, 16, 16);
 }
 
@@ -56962,7 +56976,7 @@ tr.solid:nth-child(2n) {
 
 .Legal[data-v-3d748466] .el-table .cell {
     padding: 0px;
-    font-size: 6px;
+    font-size: 12px;
     color: rgb(0, 0, 0);
     word-break: break-word;
     height: auto;

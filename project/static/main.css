@@ -658,3 +658,7 @@
   outline: none;
 }
 
+
+#carousel-example-generic {
+  min-height: 300px;
+}
