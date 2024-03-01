@@ -57,6 +57,6 @@ window.addEventListener("keydown", function (event) {
 
 //设置按钮
 setting.onclick = () => {
-  const gdNumber = prompt("请输入功德值:")
+  const gdNumber = prompt("请输入一次点击功德值，不填是0：")
   gd = Number(gdNumber)
 }

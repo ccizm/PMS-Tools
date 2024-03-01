@@ -60,9 +60,16 @@ body {
 }
 
 .setting {
-  position: relative;
+  position: absolute;
   left: 15px;
   top: 15px;
+  width: 15px;
+  height: 15px;
+}
+
+.setting .fa {
+  color: #fff;
+  font-size: 14px;
 }
 
 .clickDown {

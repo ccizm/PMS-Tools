@@ -92,26 +92,6 @@ chrome.storage.sync.get('options', (data) => {
     }
 
 
-    //初始化开源项目
-    var OpenSourceProjectTable = $('#OpenSourceProject');
-    for (var i = 0; i < options.OpenSourceProject.length; i++) {
-        var tr = document.createElement('tr');
-        var td = document.createElement('td');
-        var td2 = document.createElement('td');
-        var td3 = document.createElement('td');
-        var td4 = document.createElement('td');
-        td.innerHTML = options.OpenSourceProject[i].Name;
-        tr.appendChild(td);
-        td2.innerHTML = options.OpenSourceProject[i].Version;
-        tr.appendChild(td2);
-        td3.innerHTML = '<a href="' + options.OpenSourceProject[i].license + '" target="_blank">LICENSE</a>';
-        tr.appendChild(td3);
-        td4.innerHTML = '<a href="' + options.OpenSourceProject[i].Url + '" target="_blank">Website</a>';
-        tr.appendChild(td4);
-        OpenSourceProjectTable.append(tr);
-    }
-
-
 });
 
 
