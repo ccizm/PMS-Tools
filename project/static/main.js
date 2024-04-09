@@ -19,7 +19,7 @@ const options = {
         "现金支付",
         "芝麻信用支付",
         "AR账",
-        "Unionpay 银联卡支付",
+        "Unipay 银联卡支付",
         "数字人民币支付"
     ],
     "Consumption": [
@@ -49,9 +49,6 @@ const options = {
     "PrinterTested": [{
         "PrinterBrand": "佳博",
         "PrinterModel": "GP-L80160 Series"
-    },{
-        "PrinterBrand": "佳博",
-        "PrinterModel": "GP-L80180 Series"
     }]
 };
 
