@@ -1,7 +1,7 @@
 {
     "name": "__MSG_extName__",
     "author": "Siem",
-    "version": "0.4.1",
+    "version": "0.5.2",
     "default_locale": "zh_CN",
     "manifest_version": 3,
     "description": "PMS工具集合，各式各样的工具",
