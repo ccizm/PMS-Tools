@@ -1,0 +1,104 @@
+<!--
+    PMS-Tools - 查常用信息
+    作者：张贝达
+    网站：https://beida.xyz
+    邮箱：admin@beida.xyz
+-->
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查常用信息 - PMS工具箱</title>
+
+    <link rel="shortcut icon" href="../static/images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="../static/bootstrap-3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/main.css">
+
+</head>
+
+<body class="page pricecalc">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <span class="navbar-brand">PMS工具箱</span>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">工具 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="./checkout.html">结账单制作</a></li>
+                            <li><a href="./pricecalc.html">房价计算器</a></li>
+                            <li class="active"><a href="./commonInfo.html">查常用信息</a></li>
+                            <li><a href="./handoversheet.html">POS差异单</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="./options.html">设置</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><span class="glyphicon glyphicon-check"></span> 查询信息</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li role="presentation" class="active" id="Monthabbr"><a href="#">月份英文缩写对照表</a></li>
+                            <li role="presentation" id="Visa_free"><a href="#">中外互免签证协定一览表</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-12">
+                <div class="panel panel-default ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" id="TableInfoTitle"><span class="glyphicon glyphicon-search"></span> 查常用信息</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive" style="max-height: 500px;">
+                            <table id="InfoContent" class="table table-hover">
+                                <thead> </thead>
+                                <tbody> </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+                        所有信息均来自网络，仅供参考！
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/jquery-3.6.0/jquery.min.js"></script>
+    <script src="../static/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+    <script src="../static/layDate-v5.3.1/laydate.js"></script>
+    <script src="../static/jquery.tabletojson/jquery.tabletojson.min.js"></script>
+    <script src="../static/Tippy/popper.min.js"></script>
+    <script src="../static/Tippy/tippy-bundle.umd.js"></script>
+    <script src="../static/main.js"></script>
+    <script src="../static/commonInfo.js"></script>
+</body>
+
+</html>

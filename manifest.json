@@ -17,5 +17,9 @@
         "default_icon": "project/static/images/logo.png",
         "default_title": "__MSG_extName__",
         "default_popup": "project/pages/popup.html"
-    }
+    },
+    "web_accessible_resources": [
+        "project/pages/checkout/Template/*",
+        "project/pages/commonInfo/*"
+    ]
 }

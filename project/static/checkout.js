@@ -2,6 +2,10 @@ chrome.storage.sync.get('Checkout', (data) => {
     Object.assign(Checkout, data.Checkout);
 });
 
+//处理插件下json文件
+
+const TemplateIndexPath = chrome.runtime.getURL('project/pages/checkout/Template/index.json');
+
 $('#PrintDate').val(nowDate());
 $('#ConsumptionDate').val(nowDate());
 $('#PaymentDate').val(nowDate());
@@ -69,8 +73,7 @@ $('#PaymentOperate').click(function () {
 $('#PrintPreview').click(function () {
     if ($('#CustomerName').val() != "" && $('#StaffAD').val() != "" && $('#ConsumptionTable tbody tr').length != 0) {
         CheckoutDataSet();
-        document.getElementById('CheckoutA').checked = true;
-        document.getElementById('CheckoutB').checked = false;
+        const Iframeis = document.getElementById('CheckoutContent').getElementsByTagName('input')[0];
         var dateOne = new Date($('#PrintDate').val()); //Year, Month, Date    
         var dateTwo = new Date(Checkout.CheckoutTime); //Year, Month, Date 
         if (dateOne < dateTwo) {
@@ -83,7 +86,7 @@ $('#PrintPreview').click(function () {
                 show: true,
                 keyboard: false
             });
-            createIframe(document.getElementById('previewCheckout'), './checkout/a.html');
+            createIframe(document.getElementById('previewCheckout'), './checkout/Template/' + Iframeis.value + '/index.html');
             if ($('#PaymentTable tbody tr').length != 0) {
                 $('#PrintModal').modal('toggle');
             } else {
@@ -97,16 +100,72 @@ $('#PrintPreview').click(function () {
     }
 });
 
-//选择结账单类型
-$('input[type="radio"][name="Checkoutradio"]').on("change", function () {
-    document.getElementById('previewCheckout').innerHTML = "";
-    createIframe(document.getElementById('previewCheckout'), './checkout/' + this.value + '.html');
-});
 
-$('#PrintThis').click(function () {
-    document.getElementById('previewCheckout').getElementsByTagName('iframe')[0].contentWindow.print();
-})
+// 获取 id 为 "CheckoutContent" 的元素
+const checkoutContent = document.getElementById('CheckoutContent');
+const form = document.createElement('form');
+fetch(TemplateIndexPath)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // 在这里处理你的JSON数据
 
+        for (const [key, values] of Object.entries(data)) {
+            // 确保values是一个数组
+            if (!Array.isArray(values)) {
+                console.error(`键 "${key}" 的值不是一个数组`);
+                continue;
+            }
+
+            // 创建一个div元素，用于存放每个分类的单选按钮
+            const div = document.createElement('div');
+
+            // 创建一个h3元素，用于显示分类名称
+            const h3 = document.createElement('p');
+            h3.textContent = key;
+            div.appendChild(h3);
+
+            // 遍历当前分类的每个选项
+            values.forEach(value => {
+                // 创建一个label元素
+                const label = document.createElement('label');
+                label.classList.add('radio-inline');
+
+                // 创建一个input元素，type为radio
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.classList.add('form-check-input');
+                input.id = `${key}_${value.name}`;
+                input.name = `Checkoutradio`;
+                input.value = `${key}/${value.name}`;
+
+                // 将input元素添加到label元素中
+                label.appendChild(input);
+                label.appendChild(document.createTextNode(`模板${value.name}`))
+                // 将label元素添加到div元素中
+                div.appendChild(label);
+            });
+            // 将form元素添加到id为"CheckoutContent"的元素中
+            checkoutContent.appendChild(div);
+
+            //遍历checkoutContent下的单选按钮，并选择第一个
+            document.getElementById('CheckoutContent').getElementsByTagName('input')[0].checked = true;
+
+            //选择结账单类型
+
+            $('input[type="radio"][name="Checkoutradio"]').on("change", function () {
+                document.getElementById('previewCheckout').innerHTML = "";
+                createIframe(document.getElementById('previewCheckout'), './checkout/Template/' + this.value + '/index.html');
+            });
+
+            $('#PrintThis').click(function () {
+                document.getElementById('previewCheckout').getElementsByTagName('iframe')[0].contentWindow.print();
+            })
+        }
+
+    })
+    .catch(error => {
+        console.error('获取JSON数据时出错:', error);
+    });
 
 $('#PreviewModal .Print-close').click(function () {
     destroyIframe(document.getElementById('previewCheckout').getElementsByTagName('iframe')[0])

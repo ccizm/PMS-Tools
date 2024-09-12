@@ -210,21 +210,23 @@ function getQuote() {
     ] // 可以通过改变数组内容，对名言或诗词进行增删
     return quoteArr[Math.floor(Math.random() * quoteArr.length)] // 数组中随机取一个元素
 }
-
-tippy('.navbar-brand', {
-    content: getQuote(),
-});
+//判断元素是否存在
+if($('.navbar-brand')){
+    tippy('.navbar-brand', {
+        content: getQuote()
+    });
+}
 
 tippy('#CustomNum', {
-    content: '自定义填写，8位随机数',
+    content: '自定义填写，8位随机数'
 });
 
 tippy('#ResetDefault', {
-    content: '点了可不许反悔哦~',
+    content: '点了可不许反悔哦~'
 });
 
 tippy('.checkDateStop', {
-    content: '日期递增锁',
+    content: '日期递增锁'
 });
 
 /**
