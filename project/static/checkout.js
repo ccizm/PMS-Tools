@@ -69,8 +69,8 @@ $('#PaymentOperate').click(function () {
 $('#PrintPreview').click(function () {
     if ($('#CustomerName').val() != "" && $('#StaffAD').val() != "" && $('#ConsumptionTable tbody tr').length != 0) {
         CheckoutDataSet();
-        document.getElementById('CheckoutA').checked = false;
-        document.getElementById('CheckoutB').checked = true;
+        document.getElementById('CheckoutA').checked = true;
+        document.getElementById('CheckoutB').checked = false;
         var dateOne = new Date($('#PrintDate').val()); //Year, Month, Date    
         var dateTwo = new Date(Checkout.CheckoutTime); //Year, Month, Date 
         if (dateOne < dateTwo) {
@@ -83,7 +83,7 @@ $('#PrintPreview').click(function () {
                 show: true,
                 keyboard: false
             });
-            createIframe(document.getElementById('previewCheckout'), './checkout/b.html');
+            createIframe(document.getElementById('previewCheckout'), './checkout/a.html');
             if ($('#PaymentTable tbody tr').length != 0) {
                 $('#PrintModal').modal('toggle');
             } else {
