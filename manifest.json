@@ -22,8 +22,7 @@
         {
           "resources": [
             "project/pages/checkout/Template/index.json",
-            "project/pages/commonInfo/Monthabbr.json",
-            "project/pages/commonInfo/Visa-free.json"
+            "project/pages/commonInfo/*"
           ],
           "use_dynamic_url": true
         }

@@ -140,7 +140,7 @@ fetch(TemplateIndexPath)
 
                 // 将input元素添加到label元素中
                 label.appendChild(input);
-                label.appendChild(document.createTextNode(`模板${value.name}`))
+                label.appendChild(document.createTextNode(`${value.name}`))
                 // 将label元素添加到div元素中
                 div.appendChild(label);
             });
